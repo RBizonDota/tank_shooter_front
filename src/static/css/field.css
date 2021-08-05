@@ -1,0 +1,6 @@
+.field-container {
+    height: 500px;
+    width: 1000px;
+    background-color: rgba(66,66,66, 0.5);
+    overflow: "hidden";
+}
