@@ -2,76 +2,60 @@ import '../static/css/field.css'
 
 import React from 'react'
 import Tank from '../components/Tank'
+import Bullet from '../components/Bullet'
+import Wall from '../components/Wall'
 import Controller from './Controller'
+
+// import io from 'socket.io-client'
 
 import keys from '../const/keys'
 
 export default class Field extends React.Component{
-    state = {
-        width: 1000,
-        height: 500,
-        my_tank: "askjfhaskfgajsgfsajhdvajshg",
-        tanks: {
-            "askjfhaskfgajsgfsajhdvajshg":{
-                id: "askjfhaskfgajsgfsajhdvajshg",
-                size:{
-                    x:50,
-                    y:30,
-                    b_r:12, //Радиус башни
-                    w_l: 12,
-                    w_w: 4
-                },
-                napr:{
-                    az:30,
-                    b_az:60
-                },
-                pos: {
-                    x: 60,
-                    y:60
-                },
-                fire:{
-                    fire_rate: 200,
-                    current:20
-                }
-            }
-        },
-        bullets:[]
-    };
+    state = {tanks:this.props.field.tanks, 
+            bullets:this.props.field.bullets};
     
-    set_tank = (data)=>{
-        // console.log(data)
-        var new_tanks = this.state.tanks
-        new_tanks[this.state.my_tank] = data.tank
-        var new_bullets = data.bullets
-        console.log(new_bullets)
-
-        this.setState({tanks:new_tanks, bullets:[...new_bullets]})
-    }
-
-    get_bullets = () =>{
-        return this.state.bullets
-    }
-
+    // shouldComponentUpdate(nextProps, newState){
+    //     // console.log("shouldComponentUpdate", nextProps, "|", nextState);
+    //     // console.log("shouldComponentUpdate", this.props, "|", this.state);
+    //     var nextState = nextProps.field
+    //     if (nextState.tanks.length!=this.state.tanks.length) return true
+    //     if ((nextState.bullets.length!=this.state.bullets.length)||(nextState.bullets.length>0)) return true
+    //     for (let key in nextState.tanks) {
+    //         // console.log("!!!!", key)
+    //         let tank1 = nextState.tanks[key]
+    //         let tank2 = this.state.tanks[key]
+    //         console.log(tank1.pos, tank2.pos)
+    //         if (!((tank1.pos.x === tank2.pos.x)&&(tank1.pos.y === tank2.pos.y)&&(tank1.napr.az === tank2.napr.az)&&(tank1.napr.b_az === tank2.napr.b_az))) return true
+    //     }
+    //     console.log("REturnng false")
+    //     return false;  
+    // }
     componentDidMount(){
+        
     }
     render(){
-        var bullets = this.state.bullets
-        console.log("TANK", this.state.bullets)
+        var bullets = this.props.get_bullets()
+        var tanks = this.props.get_tanks()
+        var walls = this.props.get_walls()
+        console.log("TANK",tanks, bullets)
         return(
         <div className="field-container">
-            <Controller set_data={this.set_tank} tank={this.state.tanks[this.state.my_tank]} 
-                        field_size={{width: this.state.width, height: this.state.height}}
-                        get_bullets={this.get_bullets}>
-                <Tank stat={this.state.tanks["askjfhaskfgajsgfsajhdvajshg"]}/>
                 {
-                    this.state.bullets.map(el=>{
-                        return (<div className="bullet-body" style={{left: el.x-1, 
-                            top:el.y-2.5, 
-                            transform: "rotate("+el.az+"deg)"
-                           }}></div>)
+                    Object.keys(tanks).map(el=>{
+                        var tank = tanks[el]
+                        return (<Tank stat={tank}/>)
                     })
                 }
-            </Controller>
+                {
+                    bullets.map(el=>{
+                        return (<Bullet data={el}/>)
+                    })
+                }
+                {
+                    walls.map(el=>{
+                        return (<Wall data={el}/>)
+                    })
+                }
         </div>)
     }
 }

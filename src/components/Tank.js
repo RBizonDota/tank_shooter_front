@@ -2,30 +2,26 @@ import React from 'react'
 
 import "../static/css/tank.css"
 
-export default class Tank extends React.Component{
-
-    state = this.props.stat
-
-    render() {
-        let az = this.state.napr.az
-        let b_az = this.state.napr.b_az
-        return(<div id={this.state.id} className="tank" style={{left: this.state.pos.x, top:this.state.pos.y}}>
-            <div className="tank-body" style={{left: this.state.pos.x, top:this.state.pos.y, height: this.state.size.y, width: this.state.size.x, transform: "rotate("+az+"deg)"}}></div>
-            <div className="tank-base" style={{left: this.state.pos.x+this.state.size.x/2-this.state.size.b_r, 
-                                                top:this.state.pos.y+this.state.size.y/2-this.state.size.b_r, 
-                                                height: 2*this.state.size.b_r, 
-                                                width: 2*this.state.size.b_r, 
-                                                transform: "rotate("+b_az+"deg)"}}>
-                                                    <div className="tank-weapon" style={{
-                                                        height: 2*this.state.size.w_w, 
-                                                        width: 2*this.state.size.w_l,
-                                                        "marginTop": this.state.size.b_r-1.25*this.state.size.w_w,
-                                                        "marginLeft": this.state.size.b_r}}></div>
-                                                </div>
-            
-        </div>)
-    }
-
+export default function Tank (props){
+    console.log("TANK,", props)
+    props = props.stat
+    let az = props.napr.az
+    let b_az = props.napr.b_az
+    return(<div id={props.id} className="tank" style={{left: props.pos.x, top:props.pos.y}}>
+        <div className="tank-body" style={{left: props.pos.x, top:props.pos.y, height: props.size.y, width: props.size.x, transform: "rotate("+az+"deg)"}}></div>
+        <div className="tank-base" style={{left: props.pos.x+props.size.x/2-props.size.b_r, 
+                                            top:props.pos.y+props.size.y/2-props.size.b_r, 
+                                            height: 2*props.size.b_r, 
+                                            width: 2*props.size.b_r, 
+                                            transform: "rotate("+b_az+"deg)"}}>
+                                                <div className="tank-weapon" style={{
+                                                    height: 2*props.size.w_w, 
+                                                    width: 2*props.size.w_l,
+                                                    "marginTop": props.size.b_r-1.25*props.size.w_w,
+                                                    "marginLeft": props.size.b_r}}></div>
+                                            </div>
+        
+    </div>)
 
 
 }

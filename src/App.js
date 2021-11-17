@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 
-import Field from './containers/Field.js'
+import DataGetter from './containers/DataGetter.js'
 
 function App() {
   return (
-    <Field/>
+    <DataGetter/>
   );
 }
 

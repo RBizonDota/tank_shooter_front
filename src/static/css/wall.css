@@ -1,0 +1,7 @@
+.wall-body{
+    position:absolute;
+    z-index:110;
+    transform-origin: top left;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid black;
+}
