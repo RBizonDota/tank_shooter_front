@@ -13,13 +13,23 @@ export default function Bullet (props){
     let az = Math.atan(dy/dx)
     console.log((wall.start.y+wall.end.y-wall.width*Math.cos(az))/2, (wall.start.x+wall.end.x+wall.width*Math.sin(az))/2)
     return(
-        <div className="wall-body" style={{
-            width: len,
-            height: wall.width,
-            top: wall.start.y-wall.width*Math.cos(az)/2,
-            left: wall.start.x+wall.width*Math.sin(az)/2,
-            transform: "rotate("+az*180/Math.PI+"deg)"
-        }}>
+        <div>
+            <div className="wall-body" style={{
+                width: len,
+                height: wall.width,
+                top: wall.start.y-wall.width*Math.cos(az)/2,
+                left: wall.start.x+wall.width*Math.sin(az)/2,
+                transform: "rotate("+az*180/Math.PI+"deg)"
+            }}>
+            </div>
+            <div className="point" style={{
+                top: wall.start.y,
+                left: wall.start.x,
+            }}></div>
+            <div className="point" style={{
+                top: wall.end.y,
+                left: wall.end.x,
+            }}></div>
         </div>
     )
 }

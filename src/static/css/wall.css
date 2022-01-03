@@ -5,3 +5,14 @@
     background-color: rgb(240, 240, 240);
     border: 1px solid black;
 }
+
+.point{
+    position:absolute;
+    z-index:999;
+    transform-origin: top left;
+    background-color: red;
+    border: 1px solid black;
+    border-radius:50%;
+    width:2px;
+    height:2px;
+}
