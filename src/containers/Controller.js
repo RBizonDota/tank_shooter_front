@@ -129,7 +129,7 @@ export default class Controller extends React.Component{
         } });
     }
     onKeyUp = (e)=>{
-        console.log("onKeyUp", e.key)
+        console.log("onKeyUp", e.key, e)
         this.setState({ keys_pressed: {
             ...this.state.keys_pressed,
             [e.keyCode]:false

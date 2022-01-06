@@ -1,3 +1,80 @@
 .tank-info{
     margin-top:20px;
 }
+
+/* Бар здоровья */
+.progress {
+    width: 200px;
+    height: 2.5rem;
+    position: relative;
+    background: #e6e6e6;
+    border: 1px solid #bcbcbc
+}
+
+.progress .progress_inner {
+    position: absolute;
+    width:  75%;
+    height: 100%;
+    background-color: #06b025!important;
+    background: -webkit-linear-gradient(left, #06b025 0%, #06b025 30%, #5faf6c 45%, #c5ddc6 50%, #5faf6c 60%, #06b025 70%, #06b025 100%);
+    background: linear-gradient(left, #06b025 0%, #06b025 30%, #5faf6c 45%, #c5ddc6 50%, #5faf6c 60%, #06b025 70%, #06b025 100%);
+    background-repeat: no-repeat;
+    background-size: 1000px 100%;
+    display: inline-block;
+    position: relative;
+    -webkit-animation-duration: 5.25s;
+    animation-duration: 5.25s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: shimmer;
+    animation-name: shimmer;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-transition: width .6s ease;
+    transition: width .6s ease;
+}
+
+.progress .progress_inner-fire {
+    position: absolute;
+    width:  75%;
+    height: 100%;
+    background-color: #06b025!important;
+    background: -webkit-linear-gradient(left, #06b025 0%, #06b025 30%, #5faf6c 45%, #c5ddc6 50%, #5faf6c 60%, #06b025 70%, #06b025 100%);
+    background: linear-gradient(left, #06b025 0%, #06b025 30%, #5faf6c 45%, #c5ddc6 50%, #5faf6c 60%, #06b025 70%, #06b025 100%);
+    background-repeat: no-repeat;
+    background-size: 1000px 100%;
+    display: inline-block;
+    position: relative;
+    -webkit-animation-duration: 5.25s;
+    animation-duration: 5.25s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: shimmer;
+    animation-name: shimmer;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-transition: width .1s ease;
+    transition: width .1s ease;
+}
+
+@-webkit-keyframes shimmer {
+    0% {
+        background-position: 100% 0
+    }
+    100% {
+        background-position: -100% 0
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 100% 0
+    }
+    100% {
+        background-position: -100% 0
+    }
+}
