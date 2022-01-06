@@ -11,7 +11,7 @@ export default function Bullet (props){
 
     let len = Math.sqrt(dx*dx+dy*dy)
     let az = Math.atan(dy/dx)
-    console.log((wall.start.y+wall.end.y-wall.width*Math.cos(az))/2, (wall.start.x+wall.end.x+wall.width*Math.sin(az))/2)
+    // console.log((wall.start.y+wall.end.y-wall.width*Math.cos(az))/2, (wall.start.x+wall.end.x+wall.width*Math.sin(az))/2)
     return(
         <div>
             <div className="wall-body" style={{

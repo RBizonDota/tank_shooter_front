@@ -14,7 +14,8 @@ export default class Controller extends React.Component{
         bg_thread:true,
         socket: this.props.socket,
         // bullets: this.props.bullets
-        actions:null
+        actions:null,
+        interval:null
     }
 
     move_bullets = (new_bullets)=>{
@@ -116,6 +117,7 @@ export default class Controller extends React.Component{
 
     run_bg_thread = ()=>{
         var interval = setInterval(()=>{this.controller(this.state.keys_pressed)},1000/config.FPS);
+        this.setState({ interval: interval });
     }
 
     onKeyDown = (e)=>{

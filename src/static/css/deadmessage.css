@@ -1,0 +1,68 @@
+.allin-block{
+    position: absolute;
+    
+    top:0;
+    left:0;
+
+    height:100%;
+    width:100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index:800;
+}
+
+.dead-message{
+    /* margin: 50%; */
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    margin:auto;
+}
+
+.death-background {
+    background: black;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    text-align: center;
+    opacity: 1;
+    animation: fade-in 10s linear;
+    box-shadow: 0 0 black, 0 0 100px black;
+    border-radius:25px;
+    /* transition: .55s opacity, .55s visibility; */
+    /* transform: ; */
+}
+.death-background  p {
+    color: #ff0000;
+    font-family: OptimusPrinceps, sans-serif;
+    letter-spacing: 5px;
+    font-size: 8em;
+    font-weight: 400;
+    animation: fade-in 10s linear, text-zoom 5s linear;
+    border-radius:25px;
+}
+
+.extra-shadows{
+    box-shadow: 0 0 black, 0 0 200px black;
+    animation: fade-in 10s linear;
+    border-radius:25px;
+    width:100%;
+    height:100%;
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+@keyframes text-zoom {
+    0% { font-size: 5em; }
+    25% { font-size: 6em; }
+    50% { font-size: 7em; }
+    75% { font-size: 8em; }
+    100% { font-size: 8em; }
+}

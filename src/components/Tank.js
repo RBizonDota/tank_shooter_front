@@ -3,7 +3,7 @@ import React from 'react'
 import "../static/css/tank.css"
 
 export default function Tank (props){
-    console.log("TANK,", props)
+    // console.log("TANK,", props)
     props = props.stat
     let az = props.napr.az
     let b_az = props.napr.b_az

@@ -37,7 +37,7 @@ export default class Field extends React.Component{
         var bullets = this.props.get_bullets()
         var tanks = this.props.get_tanks()
         var walls = this.props.get_walls()
-        console.log("TANK",tanks, bullets)
+        // console.log("TANK",tanks, bullets)
         return(
         <div className="field-container">
                 {
